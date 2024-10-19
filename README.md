@@ -3,7 +3,7 @@
 - Unix based OS (preferrably Linux) NOTE: docker??
 - `g++` compiler
 - cmake (>= 3.8) and make
-- VTK library
+- VTK library (>= 7.1.1)
 
 # Building the project
 
@@ -81,16 +81,12 @@ If VTK is missing, try to install it:
 ```bash
 # Debian
 sudo apt install libvtk7-dev libvtk7.1
-
-# Arch
-sudo pacman -S vtk
 ```
 
 If that does not work, try to install it manually:
 ```bash
-mkdir -p ~/software && cd ~/software            # create software directory in home
-wget https://www.vtk.org/files/release/8.2/VTK-8.2.0.tar.gz  # download source archive
-tar xf VTK-8.2.0.tar.gz && cd VTK-8.2.0         # extract files and enter directory
+-wget https://www.vtk.org/files/release/8.2/VTK-8.2.0.tar.gz  # download source archive
+-tar xf VTK-8.2.0.tar.gz && cd VTK-8.2.0         # extract files and enter directory
 mkdir build && cd build                         # create build directory
 cmake .. && make                                # build
 sudo make install                               # install (needs password)
