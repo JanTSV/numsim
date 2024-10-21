@@ -51,7 +51,7 @@ cd build/
 cmake ..
 make  # this builds the src/numsim executable
 
-# ... for the rease:
+# ... for the release:
 cmake -DCMAKE_BUILD_TYPE=Release .
 ```
 
