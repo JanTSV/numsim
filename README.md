@@ -1,6 +1,13 @@
 <div align="center">
+
+<picture>
+  <img alt="NumSim logo" src="/docs/logo.jpeg" width="50%" height="50%"/>
+</picture>
+
 <h3>
+
 [Requirements](#requirements) | [How to](#how-to) | [Basics](#basics)
+
 </h3>
 </div>
 
