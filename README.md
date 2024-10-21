@@ -1,20 +1,56 @@
+<div align="center">
+<h3>
+[Requirements](#requirements) | [How to](#how-to) | [Basics](#basics)
+</h3>
+</div>
+
 # Requirements
 
 - Unix based OS (preferrably Linux) NOTE: docker??
 - `g++` compiler
 - cmake (>= 3.8) and make
-- VTK library (>= 7.1.1)
+- VTK library (>= 7.1.1, see `.gitmodules`)
+- paraview
 
-# Building the project
+# How to
+
+## Get the source code
 
 ```bash
+# Clone the repository
+# ... via HTTPS
+git clone https://github.com/JanTSV/numsim.git
+
+# ... via SSH
+git clone git@github.com:JanTSV/numsim.git
+
+# Load the submodules (VTK)
+git submodule update --init
+```
+
+## Build the project
+
+```bash
+# Optional: build VTK
+# Assuming your are already in the directory of this repo
+mkdir VTK/build & cd VTK/build
+cmake ..
+make
+sudo make install
+cd ../..  # go back to the repo home
+
+# Build this project
 cd build/
 cmake ..
-cd ..
-make
+make  # this builds the src/numsim executable
+
+# ... for the rease:
+cmake -DCMAKE_BUILD_TYPE=Release .
 ```
 
 # Basics
+
+Link to the [documentation](https://numsim-exercises.readthedocs.io/en/latest/).
 
 ## How to get onto the cluster
 
@@ -77,9 +113,12 @@ cd build/
 cmake ..
 ```
 
+
+### From the numsim documentation
+
 If VTK is missing, try to install it:
 ```bash
-# Debian
+# Debian (this did not run on Ubuntu 24.04 LTS)
 sudo apt install libvtk7-dev libvtk7.1
 ```
 
